@@ -35,5 +35,6 @@ class ArticleFormView(FormView):
     extra_context = {}
 
     def get(self, request, article):
-        self.extra_context['article'] = article
+        post = Post.objects.get(id=article)
+        self.extra_context['article'] = post
         return render(request, self.template_name, self.extra_context)
