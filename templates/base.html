@@ -9,6 +9,7 @@
         {% endblock %}
 
     </title>
+    <link href={% static "fonts/style.css" %} rel="stylesheet" type = "text/css" />
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -23,11 +24,11 @@
             <div class="logo">
                 <a href="/" class="brand-logo">
                     <img src="{% static "images/Logo_Kodland.png" %}">
-                    <h5 class="logo-text">Блог</h5>
+                    <h5 class="logo-text text-font">Блог</h5>
                 </a>
             </div>
             <ul class="right">
-                <li><a class="waves-effect waves-light btn-small" href="/add">Добавить статью +</a></li>
+                <li><a class="waves-effect waves-light btn-small text-font" href="/add">+ Добавить статью</a></li>
             </ul>
 
         </div>

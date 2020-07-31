@@ -1,3 +1,5 @@
+
+
 nav{
     background-color: white;
 
@@ -20,7 +22,22 @@ h5{
 }
 
 .logo-text{
-    margin-top: 19px;
+    margin-top: 22px;
     float: right;
     margin-inline-start: 15px;
+}
+
+.btn-small{
+    background: #315AF2;
+    border-radius: 6px;
+    text-transform: none;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background: #6283f5;
+}
+
+.text-font{
+    font-family: Circe Rounded;
+    font-weight: bold;
 }
