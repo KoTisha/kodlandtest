@@ -28,6 +28,8 @@ class AddFormView(FormView):
 
 class ArticleFormView(FormView):
     template_name = 'post.html'
+    extra_context = {}
 
-    def get(self, request):
-        return render(request, self.template_name)
+    def get(self, request, article):
+        self.extra_context['article'] = article
+        return render(request, self.template_name, self.extra_context)
