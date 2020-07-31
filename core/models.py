@@ -7,11 +7,7 @@ from django.utils import timezone
 
 class Post(models.Model):
     title = models.CharField(max_length=350)
-    text = models.TextField()
-    date = models.DateTimeField(editable=False)
+    text = models.TextField(max_length=10000)
+    date = models.DateTimeField(default=timezone.now)
     image = models.ImageField(upload_to='images', blank=True, null=True)
 
-    def save(self, *args, **kwargs):
-        if not self.id:
-            self.date = timezone.now()
-        return super(Post, self).save(*args, **kwargs)

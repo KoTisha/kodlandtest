@@ -7,6 +7,21 @@
 {% endblock %}
 
 {% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+
+            <p>{{form.title}}
+            {{form.title.label}}</p>
+
+            <p>{{form.text}}
+            {{form.text.label}}</p>
+
+          <p>{{form.image}}
+            {{form.image.label}}</p>
+
+        <input type="submit" name="Save">
+
+    </form>
 
   <h1>Add page</h1>
 
