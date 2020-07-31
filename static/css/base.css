@@ -1,0 +1,26 @@
+nav{
+    background-color: white;
+
+}
+
+.logo{
+    margin-left: 5%;
+}
+
+h6{
+    color: black;
+}
+
+h5{
+    color: black;
+}
+
+.right{
+    margin-right: 6%;
+}
+
+.logo-text{
+    margin-top: 19px;
+    float: right;
+    margin-inline-start: 15px;
+}
