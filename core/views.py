@@ -1,15 +1,19 @@
 from django.shortcuts import render
 from django.views.generic.edit import FormView
 from .forms import PostForm
+from .models import Post
 
 # Create your views here.
 
 
 class MainFormView(FormView):
     template_name = 'main.html'
+    extra_context = {}
 
     def get(self, request):
-        return render(request, self.template_name)
+        posts = Post.objects.all()[:10]
+        self.extra_context['post'] = posts
+        return render(request, self.template_name, self.extra_context)
 
 
 class AddFormView(FormView):

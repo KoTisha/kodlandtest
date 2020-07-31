@@ -7,7 +7,10 @@
 {% endblock %}
 
 {% block content %}
+{% for item in post %}
+    <p><a href="{% url 'article' item.id %}">{{item.title}}</a></p>
+{% endfor %}
 
-  <h1>Main page</h1>
+{#  <h1>Main page</h1>#}
 
 {% endblock %}
