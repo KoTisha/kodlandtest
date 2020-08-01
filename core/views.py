@@ -11,8 +11,10 @@ class MainFormView(FormView):
     extra_context = {}
 
     def get(self, request):
-        posts = Post.objects.all()[:10]
+        posts = Post.objects.all().order_by('-date')[:10]
+        first = True
         self.extra_context['post'] = posts
+        self.extra_context['first'] = first
         return render(request, self.template_name, self.extra_context)
 
 

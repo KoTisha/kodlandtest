@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
+
+{% block uload %}
+
+    <style>
+
+        body{
+            background-color: #EEEEEE;
+        }
+
+    </style>
+
+{% endblock %}
+
 {% block title %}
 
     Article
@@ -8,14 +21,24 @@
 
 {% block content %}
 
-    <h4>{{ article.title }}</h4>
+        <div class="center-align">
 
-    <p>{{ article.text }}</p>
+            <h4 style="color: #315AF2;" class="post-text">{{ article.title | safe}}</h4>
 
-    {% if article.image %}
+            {% if article.image %}
 
-        <img src="{{ MEDIA_URL }}{{ article.image.url }}">
+                <img src="{{ MEDIA_URL }}{{ article.image.url }}" class="post-image">
 
-    {% endif %}
+            {% endif %}
+
+            <div class="post-text">
+
+                <p>{{ article.text | safe }}</p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 {% endblock %}

@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
+{% block uload %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+{% endblock %}
+
 {% block title %}
 
     Add article
@@ -7,22 +15,43 @@
 {% endblock %}
 
 {% block content %}
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
+    <div class="add-post container">
 
-            <p>{{form.title}}
-            {{form.title.label}}</p>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
 
-            <p>{{form.text}}
-            {{form.text.label}}</p>
+                <input placeholder="Введите название" type="text" name="title" maxlength="350" required="" id="id_title">
 
-          <p>{{form.image}}
-            {{form.image.label}}</p>
+{#                <textarea placeholder="Введите текст статьи" name="text" cols="40" rows="10" maxlength="10000" required="" id="id_text"></textarea>#}
 
-        <input type="submit" name="Save">
+                <textarea id="summernote" name="text" maxlength="10000" required=""></textarea>
 
-    </form>
+                <p><input type="file" name="image" accept="image/*" id="id_image"></p>
 
-  <h1>Add page</h1>
+            <input type="submit" name="Save">
+
+        </form>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                placeholder: 'Введите текст',
+                tabsize: 2,
+                toolbar: [
+                  ['style', ['style']],
+                  ['font', ['bold', 'underline', 'clear']],
+                  ['color', ['color']],
+                  ['para', ['ul', 'ol', 'paragraph']],
+                  ['table', ['table']],
+                  ['view', ['fullscreen', 'codeview']]
+                ]
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 {% endblock %}

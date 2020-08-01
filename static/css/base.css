@@ -41,3 +41,30 @@ h5{
     font-family: Circe Rounded;
     font-weight: bold;
 }
+
+.add-post{
+    float: outside;
+    margin-top: 50px;
+}
+
+.post-image{
+    margin-top: 2%;
+}
+
+.post-text{
+    margin-top: 5%;
+}
+
+#id_image{
+
+}
+
+#id_text{
+    width:100%;
+    height:150px;
+}
+
+#id_image{
+
+}
+
