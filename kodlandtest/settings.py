@@ -76,7 +76,11 @@ WSGI_APPLICATION = 'kodlandtest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    } + DATABASE_META
+}
 
 
 # Password validation
