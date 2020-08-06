@@ -1,5 +1,4 @@
 # Project exclude paths
 /.virtual/
 /.idea/
-/kodlandtest/security.py
 /media/images/
