@@ -9,6 +9,10 @@
             background-color: #EEEEEE;
         }
 
+        p{
+            background-color: #EEEEEE !important;
+        }
+
     </style>
 
 {% endblock %}
@@ -21,17 +25,17 @@
 
 {% block content %}
 
-        <div class="center-align">
+        <div id="post-info">
 
-            <h4 style="color: #315AF2;" class="post-text">{{ article.title | safe}}</h4>
+            <h4 style="color: #315AF2;" class="post-text text-font">{{ article.title | safe}}</h4>
 
             {% if article.image %}
 
-                <img src="{{ MEDIA_URL }}{{ article.image.url }}" class="post-image">
+                <div class="post-image"><img style="display: block; margin-left: auto; margin-right: auto" src="{{ MEDIA_URL }}{{ article.image.url }}"></div>
 
             {% endif %}
 
-            <div class="post-text">
+            <div class="post-text text-font">
 
                 <p>{{ article.text | safe }}</p>
 

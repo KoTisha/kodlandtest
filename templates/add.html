@@ -5,6 +5,18 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <link href="https://db.onlinewebfonts.com/c/08404dc7d57ad706bae5b126159f33fc?family=Museo+Cyrl+300" rel="stylesheet" type="text/css"/>
+
+    <style>
+
+    input{
+        color: white;
+        font-family: Museo Cyrl;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    </style>
 
 {% endblock %}
 
@@ -15,20 +27,44 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="add-post container">
 
         <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
+        {% csrf_token %}
 
-                <input placeholder="Введите название" type="text" name="title" maxlength="350" required="" id="id_title">
+            <div class="row">
 
-{#                <textarea placeholder="Введите текст статьи" name="text" cols="40" rows="10" maxlength="10000" required="" id="id_text"></textarea>#}
+                <div class="text-font col 12 l12">
+                    <p style="font-family: Museo Cyrl;font-size: 45px;line-height: 52px;letter-spacing: -0.416667px;color: #315AF2;">Добавить статью</p>
+                </div>
 
-                <textarea id="summernote" name="text" maxlength="10000" required=""></textarea>
+                <div class="col m8 l8">
+                    <input style="background: #FFFFFF;border: 2px solid #CDCDCD;border-radius: 3px;" class="text-font" placeholder="Введите название" type="text" name="title" maxlength="350" required="" id="id_title">
+                </div>
 
-                <p><input type="file" name="image" accept="image/*" id="id_image"></p>
+                <div class="col m4 l4">
+                    <input style="font-size: 18px; background: #E9399C" class="waves-effect waves-light btn-small" type="submit" value="Опубликовать" name="Save">
+                </div>
 
-            <input type="submit" name="Save">
+                <div class="col m8 l8">
+                    <textarea class="text-font" id="summernote" name="text" maxlength="10000" required=""></textarea>
+                </div>
+
+                <div class="col m4 l4">
+                    <div style="background: #FFFFFF;border: 2px solid #CDCDCD;box-sizing: border-box;border-radius: 3px;" class="label">
+                        <label>
+                            <span>Выберите файл</span>
+                            <input class="text-font " type="file" name="image" accept="image/*" id="id_image">
+
+                            <br>
+                            <i></i>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
 
         </form>
 
@@ -37,7 +73,7 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
-                placeholder: 'Введите текст',
+                placeholder: '[WORK IN PROGRESS]',
                 tabsize: 2,
                 toolbar: [
                   ['style', ['style']],

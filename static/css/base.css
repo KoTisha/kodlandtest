@@ -27,7 +27,7 @@ h5{
     margin-inline-start: 15px;
 }
 
-.btn-small{
+.btn-small, .btn-large{
     background: #315AF2;
     border-radius: 6px;
     text-transform: none;
@@ -48,11 +48,11 @@ h5{
 }
 
 .post-image{
-    margin-top: 2%;
+    margin-top: 10%;
 }
 
 .post-text{
-    margin-top: 5%;
+    margin-top: 7%;
 }
 
 #id_image{
@@ -62,9 +62,40 @@ h5{
 #id_text{
     width:100%;
     height:150px;
-}
-
-#id_image{
 
 }
 
+#post-info{
+    margin-right: 29%;
+    margin-left: 29%;
+}
+
+.row{
+    margin: 5%;
+    margin-top: 1%;
+}
+
+.bordered_first{
+    margin-bottom: 12px;
+    border-bottom: 2px solid #CDCDCD;
+}
+
+.bordered_second{
+    margin: 10px;
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 335px;
+    height: 300px;
+}
+
+.main-image{
+    margin-top: 20px;
+    text-align:center;
+    height: 120px;
+    width: 280px;
+}
+.submit-button{
+    color: #FFFFFF !important;
+}
