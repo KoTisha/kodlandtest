@@ -40,12 +40,13 @@
 
                                 <div style="overflow: hidden; height: 130px">
 
-                                    {{ article.text | safe | slice:":580" }}...
+                                    {{ article.text | safe}}...
 
                                 </div>
+
                                 <div>
 
-                                    <a class="waves-effect waves-light btn-large text-font" href="{% url 'article' article.id %}">Читать</a>
+                                    <a style="margin-top: 20px" class="waves-effect waves-light btn-large text-font" href="{% url 'article' article.id %}">Читать</a>
 
                                 </div>
 

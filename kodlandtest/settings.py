@@ -25,7 +25,13 @@ SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'www.kotish.pythonanywhere.com',
+    'kotish.pythonanywhere.com',
+    '.pythonanywhere.com',
+    'pythonanywhere.com',
+]
 
 
 # Application definition
@@ -76,11 +82,19 @@ WSGI_APPLICATION = 'kodlandtest.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+DATABASE_META = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    } + DATABASE_META
+        **DATABASE_META,
+        **DATABASE_SECRET,
+    }
 }
+
+
 
 
 # Password validation
